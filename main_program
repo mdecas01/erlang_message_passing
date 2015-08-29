@@ -1,0 +1,10 @@
+> Con = spawn(fun controller:do_convert/0).
+> Con2 = spawn(fun controller:do_convert/0).
+> Con3 = spawn(fun controller:do_convert/0).
+> Con4 = spawn(fun controller:do_convert/0).
+> Con ! {convertToF, 35}, Con2 ! {convertToF, 54}, Con3 ! {convertToF, 61}, Con4 ! {convertToF, 44}.
+> Con ! {stop}, Con2 ! {stop}.
+> Con ! {convertToF, 35}, Con2 ! {convertToF, 54}, Con3 ! {convertToF, 61}, Con4 ! {convertToF, 44}.
+> Con3 ! {nothing}, Con4 ! {nothing}.
+> Con ! {convertToF, 35}, Con2 ! {convertToF, 54}.
+> Con3 ! {convertToF, 61}, Con4 ! {convertToF, 44}.
